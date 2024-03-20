@@ -12,15 +12,15 @@ router.get('/movies', (req, res) => {
     .then(res => res.json())
     .catch(err => console.error('error'+ err))
     .then(data => {
-        console.log(data.results)
+        // console.log(data.results)
 
-        let moviesData = [];
-        for (let movie of data.results) {
-            moviesData.push({ title:movie.title, overview:movie.overview.substring(0, 250)+"...", poster_path:`https://image.tmdb.org/t/p/w500${movie.poster_path}`, voteAverage:movie.vote_average, voteCount:movie.vote_count })
-        }
+        // let moviesData = [];
+        // for (let movie of data.results) {
+        //     moviesData.push({ title:movie.title, overview:movie.overview.substring(0, 250)+"...", poster_path:`https://image.tmdb.org/t/p/w500${movie.poster_path}`, voteAverage:movie.vote_average, voteCount:movie.vote_count })
+        // }
         res.json({  
             result:true,
-            movies:moviesData
+            movies:data.results
         })
     })
 })
