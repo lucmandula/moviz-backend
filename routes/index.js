@@ -16,7 +16,7 @@ router.get('/movies', (req, res) => {
 
         let moviesData = [];
         for (let movie of data.results) {
-            moviesData.push({ title:movie.title, overview:movie.overview.substring(0, 250)+"...", poster_path:`https://image.tmdb.org/t/p/w500/${movie.poster_path}`, voteAverage:movie.vote_average, voteCount:movie.vote_count })
+            moviesData.push({ title:movie.title, overview:movie.overview.substring(0, 250)+"...", poster_path:`https://image.tmdb.org/t/p/w500${movie.poster_path}`, voteAverage:movie.vote_average, voteCount:movie.vote_count })
         }
         res.json({  
             result:true,
